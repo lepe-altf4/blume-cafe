@@ -1,0 +1,815 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carta · BLume · Plantas & Café · Neuquén</title>
+<meta name="description" content="Carta completa de BLume — cafetería, café frío, filtrados, pastelería, tragos y más. J.B. Alberdi 445, Neuquén.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green-deep: #154d3e;
+  --green-mid:  #3f7a63;
+  --green-soft: #88b39d;
+  --cream:      #f4ead4;
+  --cream-2:    #faf3df;
+  --terracotta: #e35d3d;
+  --gold:       #d2a868;
+  --gold-soft:  #e3c393;
+  --bloom:      #f0a07a;
+  --ink:        #14241e;
+  --ink-soft:   #3a4a42;
+  --line:       rgba(21,77,62,0.14);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family:'DM Sans', system-ui, sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+a { color:inherit; text-decoration:none; }
+::selection { background:var(--green-deep); color:var(--cream); }
+
+/* ---- HEADER ---- */
+.carta-header {
+  position:sticky; top:0; z-index:100;
+  background:var(--green-deep);
+  padding:14px 20px;
+  display:flex; align-items:center; justify-content:space-between;
+  box-shadow:0 4px 20px rgba(21,77,62,0.3);
+}
+.carta-logo {
+  font-family:'Cormorant Garamond', serif;
+  font-size:22px; font-weight:700;
+  color:var(--cream);
+  letter-spacing:.04em;
+  display:flex; flex-direction:column; line-height:1;
+}
+.carta-logo .sub {
+  font-size:8px; letter-spacing:.3em;
+  color:var(--gold); font-weight:400;
+  margin-top:3px;
+}
+.back-link {
+  display:flex; align-items:center; gap:6px;
+  font-size:13px; font-weight:500;
+  color:rgba(244,234,212,0.75);
+  transition:color .3s;
+}
+.back-link:hover { color:var(--bloom); }
+.back-link svg { width:16px; height:16px; }
+
+/* ---- HERO BANNER ---- */
+.carta-hero {
+  background:linear-gradient(135deg, var(--green-deep) 0%, #1f3a2c 100%);
+  padding:40px 20px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.carta-hero::before {
+  content:'';
+  position:absolute; inset:0;
+  background:radial-gradient(50% 80% at 50% 50%, rgba(240,160,122,0.12), transparent 70%);
+}
+.carta-hero .leaf-deco {
+  position:absolute; font-size:120px; opacity:.06;
+  pointer-events:none; line-height:1;
+}
+.carta-hero .leaf-deco.l1 { top:-20px; left:-20px; transform:rotate(-20deg); }
+.carta-hero .leaf-deco.l2 { bottom:-30px; right:-20px; transform:rotate(160deg); }
+.carta-hero h1 {
+  font-family:'Cormorant Garamond', serif;
+  font-size:52px; font-weight:500;
+  color:var(--cream);
+  line-height:.95;
+  position:relative; z-index:1;
+  margin-bottom:8px;
+}
+.carta-hero h1 em { font-style:italic; color:var(--bloom); }
+.carta-hero p {
+  font-family:'Caveat', cursive;
+  font-size:20px;
+  color:var(--gold);
+  position:relative; z-index:1;
+}
+
+/* ---- NAV PILLS ---- */
+.nav-pills {
+  position:sticky; top:56px; z-index:90;
+  background:var(--cream-2);
+  border-bottom:1px solid var(--line);
+  padding:12px 16px;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  display:flex; gap:8px;
+  white-space:nowrap;
+}
+.nav-pills::-webkit-scrollbar { display:none; }
+.nav-pill {
+  display:inline-flex; align-items:center; gap:6px;
+  padding:7px 14px;
+  border-radius:999px;
+  font-size:12px; font-weight:500;
+  letter-spacing:.05em;
+  border:1.5px solid var(--line);
+  color:var(--ink-soft);
+  background:var(--cream);
+  transition:all .25s;
+  cursor:pointer;
+  white-space:nowrap;
+}
+.nav-pill:hover, .nav-pill.active {
+  background:var(--green-deep);
+  color:var(--cream);
+  border-color:var(--green-deep);
+}
+
+/* ---- MAIN CONTENT ---- */
+.carta-body {
+  max-width:680px;
+  margin:0 auto;
+  padding:24px 16px 60px;
+}
+
+/* ---- SECTION BLOCK ---- */
+.menu-section {
+  margin-bottom:28px;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 4px 20px rgba(21,77,62,0.08);
+  border:1px solid var(--line);
+  scroll-margin-top:120px;
+}
+.menu-section-head {
+  background:var(--green-deep);
+  padding:18px 24px;
+  display:flex; align-items:center; gap:14px;
+}
+.menu-section-icon {
+  width:36px; height:36px;
+  border-radius:50%;
+  background:rgba(244,234,212,0.1);
+  display:flex; align-items:center; justify-content:center;
+  font-size:18px; flex-shrink:0;
+}
+.menu-section-head h2 {
+  font-family:'Cormorant Garamond', serif;
+  font-size:26px; font-weight:600;
+  color:var(--cream);
+  letter-spacing:.03em;
+  flex:1;
+}
+.menu-section-sub {
+  font-size:11px; letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--gold);
+  font-weight:500;
+}
+.menu-items {
+  background:var(--cream-2);
+}
+
+/* ---- ITEM ROW ---- */
+.menu-item {
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  padding:14px 20px;
+  border-bottom:1px dashed rgba(21,77,62,0.1);
+  position:relative;
+}
+.menu-item:last-child { border-bottom:none; }
+.menu-item-left { flex:1; min-width:0; }
+.menu-item-name {
+  font-weight:600;
+  font-size:14px;
+  color:var(--ink);
+  letter-spacing:.02em;
+  display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+}
+.menu-item-desc {
+  font-size:12px;
+  color:var(--ink-soft);
+  margin-top:2px;
+  line-height:1.4;
+}
+.menu-item-price {
+  font-family:'Cormorant Garamond', serif;
+  font-size:20px; font-weight:600;
+  color:var(--green-deep);
+  white-space:nowrap;
+  flex-shrink:0;
+  padding-top:1px;
+}
+.menu-item-price.dual {
+  font-size:14px;
+  text-align:right;
+  line-height:1.3;
+}
+
+/* ---- BADGE ---- */
+.badge {
+  display:inline-flex;
+  font-size:9px; letter-spacing:.15em;
+  font-weight:600; text-transform:uppercase;
+  padding:3px 8px; border-radius:999px;
+  white-space:nowrap;
+}
+.badge-promo { background:var(--bloom); color:var(--green-deep); }
+.badge-star  { background:var(--terracotta); color:#fff; }
+.badge-veg   { background:#a8c96e; color:#2a3a1a; }
+.badge-sin   { background:var(--gold-soft); color:var(--green-deep); }
+
+/* ---- EXTRAS BAR ---- */
+.extras-bar {
+  background:rgba(21,77,62,0.04);
+  padding:12px 20px;
+  display:flex; gap:8px; flex-wrap:wrap;
+  border-top:1px solid var(--line);
+}
+.extra-chip {
+  font-size:11px; font-weight:500;
+  padding:5px 12px; border-radius:999px;
+  background:rgba(210,168,104,0.15);
+  border:1px solid rgba(210,168,104,0.3);
+  color:var(--ink-soft);
+}
+
+/* ---- SUMMER SECTION ---- */
+.menu-section.summer .menu-section-head {
+  background:linear-gradient(135deg, #c74a2a, #e35d3d);
+}
+.menu-section.summer .menu-item-price { color:var(--terracotta); }
+
+/* ---- DIVIDER TEXT ---- */
+.section-divider {
+  text-align:center;
+  margin:32px 0 20px;
+  position:relative;
+}
+.section-divider::before {
+  content:''; position:absolute;
+  top:50%; left:0; right:0; height:1px;
+  background:var(--line);
+}
+.section-divider span {
+  position:relative;
+  background:var(--cream);
+  padding:0 16px;
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic;
+  font-size:16px;
+  color:var(--green-mid);
+}
+
+/* ---- FOOTER ---- */
+.carta-footer {
+  background:var(--green-deep);
+  color:rgba(244,234,212,0.75);
+  text-align:center;
+  padding:32px 20px;
+}
+.carta-footer .logo-footer {
+  font-family:'Cormorant Garamond', serif;
+  font-size:28px; color:var(--cream);
+  font-weight:600; margin-bottom:6px;
+}
+.carta-footer .logo-footer em { font-style:italic; color:var(--bloom); }
+.carta-footer p { font-size:13px; margin-bottom:4px; }
+.carta-footer .hours { color:var(--gold); font-weight:500; margin-top:10px; font-size:14px; }
+
+/* ---- VINE DECORATIONS ---- */
+.vine-bar {
+  display:flex; justify-content:center; align-items:center;
+  gap:6px; padding:8px 0;
+  font-size:20px; opacity:0.35;
+  letter-spacing:4px;
+}
+
+/* ---- SCROLL TO TOP ---- */
+.scroll-top {
+  position:fixed; bottom:20px; right:20px;
+  width:44px; height:44px;
+  background:var(--green-deep);
+  color:var(--cream);
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 4px 16px rgba(21,77,62,0.3);
+  opacity:0; pointer-events:none;
+  transition:all .3s;
+  cursor:pointer; border:none;
+  font-size:18px;
+}
+.scroll-top.show { opacity:1; pointer-events:auto; }
+
+@media (max-width:480px) {
+  .carta-hero h1 { font-size:40px; }
+  .menu-section-head h2 { font-size:22px; }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  * { transition:none !important; animation:none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="carta-header">
+  <div class="carta-logo">
+    BLume<span style="color:var(--terracotta)">.</span>
+    <span class="sub">PLANTAS &amp; CAFÉ</span>
+  </div>
+  <a href="index.html" class="back-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Volver al sitio
+  </a>
+</header>
+
+<!-- HERO -->
+<div class="carta-hero">
+  <span class="leaf-deco l1">🌿</span>
+  <span class="leaf-deco l2">🌿</span>
+  <h1>Nuestra <em>carta</em></h1>
+  <p>Todo lo que sale de la casa ☕🌱</p>
+</div>
+
+<!-- NAV PILLS -->
+<nav class="nav-pills" aria-label="Categorías">
+  <a class="nav-pill" href="#cafeteria">☕ Cafetería</a>
+  <a class="nav-pill" href="#frio">🧊 Café Frío</a>
+  <a class="nav-pill" href="#filtrados">🫗 Filtrados</a>
+  <a class="nav-pill" href="#te">🍵 Tés</a>
+  <a class="nav-pill" href="#bebidas">🥤 Bebidas</a>
+  <a class="nav-pill" href="#comida">🥐 Comida</a>
+  <a class="nav-pill" href="#pasteleria">🍰 Pastelería</a>
+  <a class="nav-pill" href="#sin-tacc">🌾 Sin TACC</a>
+  <a class="nav-pill" href="#combos">⭐ Combos</a>
+  <a class="nav-pill" href="#verano">☀ Verano</a>
+</nav>
+
+<!-- BODY -->
+<main class="carta-body">
+
+  <!-- 01 NUESTRA CAFETERÍA -->
+  <div class="menu-section" id="cafeteria">
+    <div class="menu-section-head">
+      <div class="menu-section-icon">☕</div>
+      <h2>Nuestra cafetería</h2>
+    </div>
+    <div class="menu-items">
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Espresso doble</div>
+          <div class="menu-item-desc">Dos shots de espresso en pocillo</div>
+        </div>
+        <div class="menu-item-price">$4.700</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Americano chico</div>
+          <div class="menu-item-desc">Un shot de espresso con agua, en taza chica</div>
+        </div>
+        <div class="menu-item-price">$4.700</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Americano grande</div>
+          <div class="menu-item-desc">Doble shot de espresso y agua, en taza mediana</div>
+        </div>
+        <div class="menu-item-price">$5.700</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Magic</div>
+          <div class="menu-item-desc">Doble shot de espresso y leche</div>
+        </div>
+        <div class="menu-item-price">$5.200</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Machiatto doble</div>
+          <div class="menu-item-desc">Doble shot de espresso y espuma de leche</div>
+        </div>
+        <div class="menu-item-price">$5.200</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Cortado</div>
+          <div class="menu-item-desc">Un shot de espresso y leche en pocillo</div>
+        </div>
+        <div class="menu-item-price">$4.700</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Lágrima</div>
+          <div class="menu-item-desc">Leche espumada con una gota de café</div>
+        </div>
+        <div class="menu-item-price">$4.700</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Latte</div>
+          <div class="menu-item-desc">Un shot de espresso y leche</div>
+        </div>
+        <div class="menu-item-price">$5.700</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Vainilla latte</div>
+          <div class="menu-item-desc">Un shot de espresso y vainilla</div>
+        </div>
+        <div class="menu-item-price">$6.300</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Caramel latte</div>
+          <div class="menu-item-desc">Un shot de espresso, leche y caramelo</div>
+        </div>
+        <div class="menu-item-price">$6.300</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Dulce de leche latte</div>
+          <div class="menu-item-desc">Un shot de espresso, leche y dulce de leche</div>
+        </div>
+        <div class="menu-item-price">$6.300</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Capuccino</div>
+          <div class="menu-item-desc">Espresso, leche y espuma</div>
+        </div>
+        <div class="menu-item-price">$7.300</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">
+            Flat white
+            <span class="badge badge-sin">Un clásico</span>
+          </div>
+          <div class="menu-item-desc">Dos shots de espresso y leche</div>
+        </div>
+        <div class="menu-item-price">$6.500</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Mocaccino</div>
+          <div class="menu-item-desc">Un shot de espresso, leche y chocolate</div>
+        </div>
+        <div class="menu-item-price">$7.300</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">
+            Nuestro irlandés
+            <span class="badge badge-star">Tremendo</span>
+          </div>
+          <div class="menu-item-desc">Espresso, whisky, leche y vainilla</div>
+        </div>
+        <div class="menu-item-price">$9.300</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Chocolatada</div>
+          <div class="menu-item-desc">Mucho chocolate y leche</div>
+        </div>
+        <div class="menu-item-price">$7.300</div>
+      </div>
+    </div>
+    <div class="extras-bar">
+      <span class="extra-chip">+ Extra espresso $1.500</span>
+      <span class="extra-chip">+ Leche vegetal $900</span>
+    </div>
+  </div>
+
+  <!-- 02 CAFÉ FRÍO -->
+  <div class="menu-section" id="frio">
+    <div class="menu-section-head">
+      <div class="menu-section-icon">🧊</div>
+      <h2>Café frío</h2>
+    </div>
+    <div class="menu-items">
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Ice americano</div></div><div class="menu-item-price">$6.300</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Ice latte</div></div><div class="menu-item-price">$6.800</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Ice vainilla latte</div></div><div class="menu-item-price">$7.100</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Ice caramel latte</div></div><div class="menu-item-price">$7.100</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Ice dulce de leche latte</div></div><div class="menu-item-price">$7.100</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Ice flat white</div></div><div class="menu-item-price">$6.500</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Ice mocca</div></div><div class="menu-item-price">$7.800</div></div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Cold brew <span class="badge badge-promo">Promo</span></div>
+        </div>
+        <div class="menu-item-price">$6.800</div>
+      </div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Espresso toni</div></div><div class="menu-item-price">$9.400</div></div>
+    </div>
+  </div>
+
+  <!-- 03 FILTRADOS -->
+  <div class="menu-section" id="filtrados">
+    <div class="menu-section-head">
+      <div class="menu-section-icon">🫗</div>
+      <h2>Filtrados</h2>
+      <span class="menu-section-sub">1 taza · 2 tazas</span>
+    </div>
+    <div class="menu-items">
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Chemex</div></div><div class="menu-item-price dual">$8.000<br>$13.000</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">V60</div></div><div class="menu-item-price dual">$8.000<br>$13.000</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Prensa francesa</div></div><div class="menu-item-price dual">$8.000<br>$13.000</div></div>
+    </div>
+  </div>
+
+  <!-- 04 TÉ EN HEBRAS -->
+  <div class="menu-section" id="te">
+    <div class="menu-section-head">
+      <div class="menu-section-icon">🍵</div>
+      <h2>Té en hebras</h2>
+    </div>
+    <div class="menu-items">
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Té negro <span class="badge badge-sin">Un clásico</span></div>
+        </div>
+        <div class="menu-item-price">$4.200</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Té verde</div>
+          <div class="menu-item-desc">Hebras de té verde con pera y manzanilla</div>
+        </div>
+        <div class="menu-item-price">$4.200</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Té azul</div>
+          <div class="menu-item-desc">Hebras de oolong con naranja</div>
+        </div>
+        <div class="menu-item-price">$4.200</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"><span>🌿 &nbsp; bebidas &nbsp; 🌿</span></div>
+
+  <!-- 05 OTRAS BEBIDAS -->
+  <div class="menu-section" id="bebidas">
+    <div class="menu-section-head">
+      <div class="menu-section-icon">🥤</div>
+      <h2>Otras bebidas</h2>
+    </div>
+    <div class="menu-items">
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Exprimido de naranja</div></div><div class="menu-item-price">$8.500</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Licuado de banana</div></div><div class="menu-item-price">$8.000</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Limonada con menta y jengibre</div></div><div class="menu-item-price">$7.000</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Limonada con frutos rojos</div></div><div class="menu-item-price">$7.500</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Agua mineral</div><div class="menu-item-desc">Con y sin gas</div></div><div class="menu-item-price">$3.500</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Aquarius</div><div class="menu-item-desc">Pomelo, manzana o naranja</div></div><div class="menu-item-price">$4.000</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Gaseosa</div><div class="menu-item-desc">Coca Cola, Zero, Sprite</div></div><div class="menu-item-price">$4.500</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Cerveza</div><div class="menu-item-desc">IPA, APA, Kolsh</div></div><div class="menu-item-price">$7.000</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Gin tonic</div><div class="menu-item-desc">Limón, naranja, frutos rojos</div></div><div class="menu-item-price">$12.000</div></div>
+    </div>
+  </div>
+
+  <div class="section-divider"><span>🌿 &nbsp; para comer &nbsp; 🌿</span></div>
+
+  <!-- 06 TODO EL DÍA -->
+  <div class="menu-section" id="comida">
+    <div class="menu-section-head">
+      <div class="menu-section-icon">🥐</div>
+      <h2>Todo el día</h2>
+    </div>
+    <div class="menu-items">
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Tostadas</div>
+          <div class="menu-item-desc">Pan casero (blanco o integral) con queso crema y dulce</div>
+        </div>
+        <div class="menu-item-price">$7.500</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Tostado de jamón y queso</div>
+          <div class="menu-item-desc">En pan ciabatta blanco o integral</div>
+        </div>
+        <div class="menu-item-price">$15.000</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Tostado de queso y tomate <span class="badge badge-veg">Vegano</span></div>
+        </div>
+        <div class="menu-item-price">$14.000</div>
+      </div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Croissant</div></div><div class="menu-item-price">$5.000</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Croissant de masa madre, jamón y queso</div></div><div class="menu-item-price">$10.000</div></div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Croissant de masa madre, tomate y queso <span class="badge badge-veg">Vegano</span></div>
+        </div>
+        <div class="menu-item-price">$9.500</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 07 PASTELERÍA -->
+  <div class="menu-section" id="pasteleria">
+    <div class="menu-section-head">
+      <div class="menu-section-icon">🍰</div>
+      <h2>Pastelería</h2>
+    </div>
+    <div class="menu-items">
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Cookies</div></div><div class="menu-item-price">$3.500</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Budín de limón con semillas de amapolas</div></div><div class="menu-item-price">$5.500</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Budín de chocolate con nueces</div></div><div class="menu-item-price">$5.500</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Apple crumble</div></div><div class="menu-item-price">$6.500</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Carrot cake</div></div><div class="menu-item-price">$8.500</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Cheesecake</div></div><div class="menu-item-price">$14.000</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Tarta</div><div class="menu-item-desc">Consultar opciones</div></div><div class="menu-item-price">$10.000</div></div>
+    </div>
+  </div>
+
+  <!-- 08 SIN TACC -->
+  <div class="menu-section" id="sin-tacc">
+    <div class="menu-section-head">
+      <div class="menu-section-icon">🌾</div>
+      <h2>Opciones sin TACC</h2>
+    </div>
+    <div class="menu-items">
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Alfajor Mar del Plata</div></div><div class="menu-item-price">$10.000</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Alfajor de maicena</div></div><div class="menu-item-price">$6.000</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Cuadrado de coco y dulce de leche</div></div><div class="menu-item-price">$12.000</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Cuadrado de limón</div></div><div class="menu-item-price">$9.000</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Brownie</div></div><div class="menu-item-price">$10.000</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Muffin</div></div><div class="menu-item-price">$10.000</div></div>
+    </div>
+  </div>
+
+  <!-- 09 COMBOS -->
+  <div class="menu-section" id="combos">
+    <div class="menu-section-head">
+      <div class="menu-section-icon">⭐</div>
+      <h2>Combos</h2>
+    </div>
+    <div class="menu-items">
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Clásico <span class="badge badge-sin">Imperdible</span></div>
+          <div class="menu-item-desc">Tostadas de pan casero con queso crema y dulce de leche, latte y jugo de naranja</div>
+        </div>
+        <div class="menu-item-price">$15.000</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Salado</div>
+          <div class="menu-item-desc">Flat white y tostado</div>
+        </div>
+        <div class="menu-item-price">$19.500</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Mix</div>
+          <div class="menu-item-desc">Latte, croissant relleno y budín de limón con semillas de amapolas</div>
+        </div>
+        <div class="menu-item-price">$19.500</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"><span>☀ &nbsp; especial de temporada &nbsp; ☀</span></div>
+
+  <!-- 10 CARTA DE VERANO -->
+  <div class="menu-section summer" id="verano">
+    <div class="menu-section-head">
+      <div class="menu-section-icon">☀</div>
+      <h2>Carta de verano</h2>
+    </div>
+    <div class="menu-items">
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Yerba buena</div>
+          <div class="menu-item-desc">Infusión de yerba, almíbar de menta, limón y naranja</div>
+        </div>
+        <div class="menu-item-price">$6.800</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Romerito</div>
+          <div class="menu-item-desc">Infusión de té verde, almíbar de naranja y limón</div>
+        </div>
+        <div class="menu-item-price">$6.800</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Margarita</div>
+          <div class="menu-item-desc">Infusión de manzanilla, almíbar de jengibre, limón y soda</div>
+        </div>
+        <div class="menu-item-price">$6.800</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Té chai</div>
+          <div class="menu-item-desc">Té chai infusionado, jengibre, limón y miel</div>
+        </div>
+        <div class="menu-item-price">$6.800</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Orange cold brew</div>
+          <div class="menu-item-desc">Cold brew, almíbar de naranja y jugo</div>
+        </div>
+        <div class="menu-item-price">$7.500</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Vermut <span class="badge badge-star">Estrella</span></div>
+          <div class="menu-item-desc">Cold brew, vermouth rosso, naranja y tónica/soda</div>
+        </div>
+        <div class="menu-item-price">$9.000</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Cosmos</div>
+          <div class="menu-item-desc">Aperol, cordial de pomelo y manzana y tónica</div>
+        </div>
+        <div class="menu-item-price">$10.000</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Ice irlandés</div>
+          <div class="menu-item-desc">Espresso, whisky, leche y vainilla. ¡Bien frío!</div>
+        </div>
+        <div class="menu-item-price">$9.300</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Filtrado frío V60 <span class="badge badge-star">Imperdible</span></div>
+          <div class="menu-item-desc">Método japonés · 2 tazas</div>
+        </div>
+        <div class="menu-item-price">$13.000</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="vine-bar">🌿 🍃 🌱 🍃 🌿</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="carta-footer">
+  <div class="logo-footer">BLUME<em>.</em></div>
+  <p>J.B. Alberdi 445 · Neuquén Capital</p>
+  <p><a href="tel:+5492995858947" style="color:inherit;">299 585-8947</a></p>
+  <p class="hours">Lun–Sáb · 8.30 a 21 hs</p>
+  <p style="margin-top:14px; font-size:12px; opacity:.6;">Los precios pueden actualizarse. Pedinos la carta en el local.</p>
+</footer>
+
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver arriba">↑</button>
+
+<script>
+// Scroll to top button
+window.addEventListener('scroll', () => {
+  document.getElementById('scrollTop').classList.toggle('show', window.scrollY > 300);
+}, {passive:true});
+
+// Nav pill click → scroll with offset for sticky header + pill bar
+document.querySelectorAll('.nav-pill').forEach(pill => {
+  pill.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (!target) return;
+    const header = document.querySelector('.carta-header');
+    const navBar = document.querySelector('.nav-pills');
+    const offset = (header ? header.offsetHeight : 56) + (navBar ? navBar.offsetHeight : 54) + 8;
+    const top = target.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: 'smooth' });
+  });
+});
+
+// Active nav pill on scroll
+const sections = document.querySelectorAll('.menu-section[id]');
+const pills = document.querySelectorAll('.nav-pill');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      pills.forEach(p => p.classList.remove('active'));
+      const active = document.querySelector(`.nav-pill[href="#${e.target.id}"]`);
+      if (active) {
+        active.classList.add('active');
+        active.scrollIntoView({inline:'center', behavior:'smooth', block:'nearest'});
+      }
+    }
+  });
+}, {threshold:0.3, rootMargin:'-120px 0px 0px 0px'});
+sections.forEach(s => io.observe(s));
+</script>
+</body>
+</html>
